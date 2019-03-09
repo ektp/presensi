@@ -1,2 +1,5 @@
 #repo="../namarepo/"
-repo="./"
+repodir="./"
+mdfile="README.md"
+reponame="origin"
+repobranch="master"

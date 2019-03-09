@@ -4,12 +4,12 @@ import datetime
 
 
 def push(id,keterangan,pesan):
-	repo = Repo(config.repo)
-	repo.git.pull('origin', 'master')
+	repo = Repo(config.repodir)
+	repo.git.pull(config.reponame, config.repobranch)
 	repo.git.status()
 	#print(_)
 	#open file
-	f=open(config.repo+"README.md",'a+')
+	f=open(config.repodir+config.mdfile,'a+')
 	f.read()
 	#f.write('## Log Presensi\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
 	tanggal = datetime.datetime.now().strftime("%x")
@@ -23,7 +23,7 @@ def push(id,keterangan,pesan):
 	f.write(keterangan)
 	f.write('\n')
 	f.close()
-	repo.git.add("README.md")
+	repo.git.add(config.mdfile)
 	repo.index.commit(pesan)
-	repo.git.push("origin","master")
+	repo.git.push(config.reponame, config.repobranch)
 
