@@ -24,6 +24,6 @@ def push(id,keterangan,pesan):
 	f.write('\n')
 	f.close()
 	repo.git.add("README.md")
-	repo.git.commit(pesan)
+	repo.index.commit(pesan)
 	repo.git.push("origin","master")
 
