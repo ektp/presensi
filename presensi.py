@@ -10,8 +10,7 @@ def push(id,keterangan,pesan):
 	#print(_)
 	#open file
 	f=open(config.repodir+config.mdfile,'a+')
-	f.read()
-	#f.write('## Log Presensi\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
+	#if.write('## Log Presensi\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
 	tanggal = datetime.datetime.now().strftime("%A, %d/%m/%Y")
 	jam = datetime.datetime.now().strftime("%X")
 	f.write(tanggal)
@@ -27,3 +26,16 @@ def push(id,keterangan,pesan):
 	repo.index.commit(pesan)
 	repo.git.push(config.reponame, config.repobranch)
 
+def set(title):
+	repo = Repo(config.repodir)
+	repo.git.pull(config.reponame, config.repobranch)
+	repo.git.status()
+	#print(_)
+	#open file
+	f=open(config.repodir+config.mdfile,'a+')
+	f.write('## '+title+'\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
+	f.close()
+	repo.git.add(config.mdfile)
+	repo.index.commit(pesan)
+	repo.git.push(config.reponame, config.repobranch)
+	
