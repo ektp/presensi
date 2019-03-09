@@ -12,7 +12,7 @@ def push(id,keterangan,pesan):
 	f=open(config.repodir+config.mdfile,'a+')
 	f.read()
 	#f.write('## Log Presensi\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
-	tanggal = datetime.datetime.now().strftime("%x")
+	tanggal = datetime.datetime.now().strftime("%d/%m/%Y")
 	jam = datetime.datetime.now().strftime("%X")
 	f.write(tanggal)
 	f.write(' | ')
