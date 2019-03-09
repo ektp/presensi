@@ -14,8 +14,6 @@ def push(id,keterangan,pesan):
 	#f.write('## Log Presensi\nTanggal | Jam | ID | Keterangan\n--- | --- | ---\n')
 	tanggal = datetime.datetime.now().strftime("%A, %d/%m/%Y")
 	jam = datetime.datetime.now().strftime("%X")
-	f.write(hari)
-	f.write(' | ')
 	f.write(tanggal)
 	f.write(' | ')
 	f.write(jam)
