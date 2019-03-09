@@ -3,7 +3,7 @@ import config
 import datetime
 
 
-def pushtogit(id,keterangan,pesan):
+def push(id,keterangan,pesan):
 	repo = Repo(config.repo)
 	repo.git.pull('origin', 'master')
 	repo.git.status()
